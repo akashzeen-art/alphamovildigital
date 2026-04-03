@@ -58,32 +58,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4">
-                  <a 
-                    href="https://www.facebook.com/Alphamovil/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-vm-pink hover:text-vm-darkblue transition-colors text-2xl"
-                  >
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/company/Alphamovil/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-vm-pink hover:text-vm-darkblue transition-colors text-2xl"
-                  >
-                    <i className="fab fa-linkedin"></i>
-                  </a>
-                  <a 
-                    href="https://www.youtube.com/channel/UCO2yU6IY73Qd_1dBDuHz-Pg/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-vm-pink hover:text-vm-darkblue transition-colors text-2xl"
-                  >
-                    <i className="fab fa-youtube"></i>
-                  </a>
-                </div>
+
               </div>
             </div>
 

@@ -11,20 +11,13 @@ export default function Header() {
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
     const cycle = () => {
-      setShowTagline(null);
+      setShowTagline('brand');
       timeout = setTimeout(() => {
-        setShowTagline('brand');
+        setShowTagline('slogan');
         timeout = setTimeout(() => {
-          setShowTagline(null);
-          timeout = setTimeout(() => {
-            setShowTagline('slogan');
-            timeout = setTimeout(() => {
-              setShowTagline(null);
-              timeout = setTimeout(cycle, 600);
-            }, 5000);
-          }, 600);
+          cycle();
         }, 5000);
-      }, 2000);
+      }, 5000);
     };
     cycle();
     return () => clearTimeout(timeout);
@@ -67,10 +60,11 @@ export default function Header() {
             {showTagline === 'brand' && (
               <motion.span
                 key="brand"
-                initial={{ x: -40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -40, opacity: 0 }}
+                initial={{ rotateY: -90, opacity: 0 }}
+                animate={{ rotateY: 0, opacity: 1 }}
+                exit={{ rotateY: 90, opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
+                style={{ display: "inline-block", transformOrigin: "center", perspective: 600 }}
                 className="text-sm md:text-xl font-bold font-saira text-vm-pink whitespace-nowrap"
               >
                 Alphamovil Digital
@@ -79,10 +73,11 @@ export default function Header() {
             {showTagline === 'slogan' && (
               <motion.span
                 key="slogan"
-                initial={{ x: -40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -40, opacity: 0 }}
+                initial={{ rotateY: -90, opacity: 0 }}
+                animate={{ rotateY: 0, opacity: 1 }}
+                exit={{ rotateY: 90, opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
+                style={{ display: "inline-block", transformOrigin: "center", perspective: 600 }}
                 className="text-xs md:text-base font-saira text-vm-darkblue whitespace-nowrap"
               >
                 Revolutionizing technology for enhanced communication solutions

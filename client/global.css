@@ -1,0 +1,233 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Saira+Condensed:400,700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    --primary: 320 81% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 0 0% 50%;
+
+    --accent: 320 81% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 320 81% 43%;
+
+    --radius: 0.5rem;
+
+    /* Home fullpage layout tokens */
+    --vm-header-h: 72px;
+    --vm-home-phone-h: 420px;
+    --vm-home-phone-gap: 20px;
+    --vm-home-left-rail: 380px;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-foreground;
+    font-family: "Nunito", sans-serif;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Saira Condensed", "Nunito", sans-serif;
+    font-weight: 700;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .btn-vm {
+    @apply px-8 py-3 rounded font-saira font-bold text-white transition-all duration-200 hover:opacity-90;
+  }
+
+  .btn-vm-pink {
+    @apply btn-vm bg-vm-pink hover:bg-opacity-90;
+  }
+
+  .section-head {
+    @apply text-xl sm:text-2xl md:text-5xl font-bold font-saira text-foreground uppercase tracking-tight;
+  }
+
+  .section-content {
+    @apply text-sm md:text-lg text-foreground leading-relaxed;
+  }
+
+  .vm-mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  .vm-snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+
+  .vm-home-phone-frame {
+    @apply relative mx-auto w-full;
+    aspect-ratio: 300 / 600;
+    max-height: var(--vm-home-phone-h);
+    /* fallback for older browsers */
+    height: var(--vm-home-phone-h);
+  }
+
+  .vm-home-phone-notch {
+    display: none;
+  }
+
+  .vm-home-phone-screen {
+    @apply absolute bg-white overflow-hidden;
+    /* Screen window inside the artwork (tuned visually) */
+    left: 12%;
+    right: 12%;
+    top: 7.8%;
+    bottom: 11.2%;
+    border-radius: 18px;
+  }
+
+  .vm-home-phone-screens {
+    height: 100%;
+    width: 100%;
+    transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+  }
+
+  .vm-home-phone-screen-slide {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vm-home-phone-indicator {
+    display: none;
+  }
+
+  .vm-home-phone-art {
+    @apply absolute inset-0 w-full h-full;
+    object-fit: fill;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .vm-fullpage-scroll {
+    scroll-snap-type: y mandatory;
+  }
+
+  .vm-fullpage-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .vm-home-content-rail {
+    padding-left: 0;
+  }
+
+  .vm-home-section-inner {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .vm-mobile-scroll {
+    scroll-snap-type: y mandatory;
+  }
+
+  .vm-snap-section {
+    scroll-snap-stop: always;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-home-phone-screens {
+    transition: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .vm-home-section-inner {
+    padding-top: calc(var(--vm-header-h) + var(--vm-home-phone-h) + var(--vm-home-phone-gap));
+    padding-bottom: 40px;
+    align-items: flex-start;
+  }
+
+  :root {
+    --vm-home-phone-h: 260px;
+    --vm-home-phone-gap: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .vm-home-content-rail {
+    padding-left: var(--vm-home-left-rail);
+  }
+}

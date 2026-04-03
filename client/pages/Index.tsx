@@ -354,30 +354,25 @@ export default function Index() {
                 <h2 className="section-head mb-8 text-vm-orange">Contact</h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Alphamovil</h3>
+                    <h3 className="font-bold text-lg mb-2">Alphamovil Digital Solutions LLP</h3>
                     <p className="text-foreground flex items-start gap-2">
                       <i className="fas fa-map-marker-alt text-vm-pink mt-1 flex-shrink-0"></i>
-                      <span>401, 4th Floor, Quantam Towers, Near Chincholi Bunder Road, S.V. Road, Malad West, Mumbai - 400064, India.</span>
+                      <span>Sector 54, Gurgaon, Haryana, 122011</span>
                     </p>
                   </div>
-                  <div>
-                    <p className="font-bold text-foreground mb-2">Registered Office Address</p>
-                    <p className="text-foreground">
-                      407, Mahalaxmi Heights, Opp. Bal Bharti School, S.V. Road, Kandivali (West), Mumbai - 400067
-                    </p>
-                  </div>
+
                   <p className="text-foreground font-semibold">Have an enquiry? Get in Touch!</p>
                   <div className="space-y-3">
                     <p className="text-foreground flex items-center gap-3">
                       <i className="fas fa-phone text-vm-pink"></i>
-                      <a href="tel:+919004193529" className="hover:text-vm-pink transition-colors">
-                        +91-9004193529
+                      <a href="tel:+919667687077" className="hover:text-vm-pink transition-colors">
+                        +91 9667687077
                       </a>
                     </p>
                     <p className="text-foreground flex items-center gap-3">
                       <i className="fas fa-envelope text-vm-pink"></i>
-                      <a href="mailto:info@Alphamovil.com" className="hover:text-vm-pink transition-colors">
-                        info@Alphamovil.com
+                      <a href="mailto:bd@alphamovil.com" className="hover:text-vm-pink transition-colors">
+                        bd@alphamovil.com
                       </a>
                     </p>
                   </div>

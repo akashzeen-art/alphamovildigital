@@ -65,7 +65,7 @@ export default function Partners() {
             <p className="text-gray-700 mb-6">
               Contact our partnership team to explore opportunities that align with your business goals.
             </p>
-            <a href="mailto:partnerships@Alphamovil.com" className="inline-block">
+            <a href="https://in.linkedin.com/company/alphamovil-digital?trk=public_profile_topcard-current-company" target="_blank" rel="noopener noreferrer" className="inline-block">
               <button className="btn-vm-pink">Start a Partnership</button>
             </a>
           </div>
